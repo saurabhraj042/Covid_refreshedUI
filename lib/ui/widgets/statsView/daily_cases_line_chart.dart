@@ -1,5 +1,5 @@
-import 'package:covid_refreshed/core/models/daily_cases_data.dart';
-import 'package:covid_refreshed/core/services/daily_cases_service.dart';
+import 'package:covid_refreshed/core/models/models.dart';
+import 'package:covid_refreshed/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
@@ -57,7 +57,7 @@ class _DailyStatState extends State<DailyStat> {
       DailyStatCovid dd = DailyStatCovid(i + 1, cases);
       dat.add(dd);
     }
-  
+
     return [
       new charts.Series<DailyStatCovid, int>(
         id: 'Cases',

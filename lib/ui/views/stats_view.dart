@@ -41,10 +41,10 @@ class _StatsScreenState extends State<StatsScreen> {
                   ),
                 ),
                 SliverPadding(
-                  padding:
-                      const EdgeInsets.only(top: 20.0, left: 10.0, right: 10.0),
+                  padding: const EdgeInsets.only(
+                    top: 20.0,
+                  ),
                   sliver: SliverToBoxAdapter(
-                      child: Expanded(
                     child: Container(
                       margin: const EdgeInsets.all(8.0),
                       padding: const EdgeInsets.all(10.0),
@@ -57,7 +57,7 @@ class _StatsScreenState extends State<StatsScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "New Cases confirmed on Each Day",
+                            "Daily Change in New Cases",
                             style: const TextStyle(
                               color: Colors.black,
                               fontSize: 15.0,
@@ -72,7 +72,7 @@ class _StatsScreenState extends State<StatsScreen> {
                         ],
                       ),
                     ),
-                  )),
+                  ),
                 ),
               ],
             );

@@ -1,16 +1,17 @@
+import 'package:covid_refreshed/ui/views/news_view.dart';
 import 'package:covid_refreshed/ui/views/views.dart';
 import 'package:flutter/material.dart';
 
-class BottomNavScreen extends StatefulWidget {
+class MainLayout extends StatefulWidget {
   @override
-  _BottomNavScreenState createState() => _BottomNavScreenState();
+  _MainLayoutState createState() => _MainLayoutState();
 }
 
-class _BottomNavScreenState extends State<BottomNavScreen> {
+class _MainLayoutState extends State<MainLayout> {
   final List _screens = [
     HomeScreen(),
     StatsScreen(),
-    Scaffold(),
+    NewsView(),
     Scaffold(),
     Scaffold(),
   ];

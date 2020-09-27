@@ -7,11 +7,11 @@ class StatsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double cases = double.parse(indiadata.cases) / 100000.0;
-    final double recovered = double.parse(indiadata.recovered) / 100000.0;
-    final double tests = double.parse(indiadata.tests) / 100000.0;
-    final int death = int.parse(indiadata.deaths);
-    final double active = double.parse(indiadata.active) / 100000.0;
+    final double cases = (double.parse(indiadata.cases) / 100000.0 ).roundToDouble();
+    final double recovered = (double.parse(indiadata.recovered) / 100000.0 ).roundToDouble();
+    final double tests = (double.parse(indiadata.tests) / 100000.0 ).roundToDouble();
+    final int death = (int.parse(indiadata.deaths)).round();
+    final double active = (double.parse(indiadata.active) / 100000.0).roundToDouble();
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.25,
