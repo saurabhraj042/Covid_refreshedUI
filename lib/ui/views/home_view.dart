@@ -1,6 +1,7 @@
 import 'package:covid_refreshed/core/models/models.dart';
 import 'package:covid_refreshed/ui/shared/colors.dart';
 import 'package:covid_refreshed/ui/shared/styles.dart';
+import 'package:covid_refreshed/ui/widgets/drawer.dart';
 import 'package:covid_refreshed/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -10,11 +11,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      drawer: DrawerWidget(),
       appBar: CustomAppBar(),
       body: CustomScrollView(
         physics: ClampingScrollPhysics(),

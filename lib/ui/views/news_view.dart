@@ -1,7 +1,20 @@
 import 'package:covid_refreshed/core/models/models.dart';
 import 'package:covid_refreshed/core/services/news_api_service.dart';
-import 'package:covid_refreshed/ui/widgets/app_bar.dart';
+import 'package:covid_refreshed/ui/shared/colors.dart';
+import 'package:covid_refreshed/ui/widgets/drawer.dart';
 import 'package:flutter/material.dart';
+
+var newsHeaderTextStyle = new TextStyle(
+  fontWeight: FontWeight.bold,
+);
+
+var appBarHeading = new Text(
+  "News",
+  style: TextStyle(
+    fontWeight: FontWeight.bold,
+    letterSpacing: 2,
+  ),
+);
 
 class NewsView extends StatefulWidget {
   @override
@@ -20,9 +33,23 @@ class _NewsViewState extends State<NewsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      drawer: DrawerWidget(),
+      backgroundColor: Palette.primaryColor,
+      appBar: AppBar(
+        backgroundColor: Palette.primaryColor,
+        elevation: 0,
+        title: appBarHeading,
+        centerTitle: true,
+      ),
       body: Container(
-        color: Colors.white,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+          color: Colors.white,
+        ),
+        margin: EdgeInsets.only(top: 20),
         child: FutureBuilder(
           future: _data,
           builder: (context, snapshot) {
@@ -76,21 +103,32 @@ class NewsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: width * 0.50,
+      width: width,
       height: 400,
-      child: Card(
-        //margin: EdgeInsets.all(31),
-        color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              width: width,
               height: 200,
               child: Image.network(dataArticle.urlToImage),
             ),
-            Text(dataArticle.title.toString()),
+            Text(
+              dataArticle.title.toString(),
+              style: newsHeaderTextStyle,
+              textAlign: TextAlign.center,
+            ),
             Text(dataArticle.description.toString()),
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: 1,
+              child: Container(
+                color: Colors.black,
+              ),
+            )
           ],
         ),
       ),

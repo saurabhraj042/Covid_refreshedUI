@@ -1,4 +1,3 @@
-
 import 'package:covid_refreshed/ui/shared/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -8,18 +7,6 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       backgroundColor: Palette.primaryColor,
       elevation: 0.0,
-      leading: IconButton(
-        icon: const Icon(Icons.menu),
-        iconSize: 28.0,
-        onPressed: () {},
-      ),
-      actions: <Widget>[
-        IconButton(
-          icon: const Icon(Icons.notifications_none),
-          iconSize: 28.0,
-          onPressed: () {},
-        ),
-      ],
     );
   }
 

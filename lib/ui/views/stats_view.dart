@@ -1,6 +1,7 @@
 import 'package:covid_refreshed/core/models/models.dart';
 import 'package:covid_refreshed/core/services/india_data_service.dart';
 import 'package:covid_refreshed/ui/shared/colors.dart';
+import 'package:covid_refreshed/ui/widgets/drawer.dart';
 import 'package:covid_refreshed/ui/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class _StatsScreenState extends State<StatsScreen> {
   Widget build(BuildContext context) {
     var widthOfScreen = MediaQuery.of(context).size.width;
     return Scaffold(
+      drawer: DrawerWidget(),
       backgroundColor: Palette.primaryColor,
       appBar: CustomAppBar(),
       body: FutureBuilder(
